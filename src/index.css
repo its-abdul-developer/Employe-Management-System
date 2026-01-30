@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+*{
+  font-family: gilroy, sans-serif;
+}
+
+#taskScroll::-webkit-scrollbar{
+  display: none;
+}
