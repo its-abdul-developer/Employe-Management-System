@@ -4,6 +4,11 @@
   font-family: gilroy, sans-serif;
 }
 
-#taskScroll::-webkit-scrollbar{
+body{
+  background-color: #111;
+  color: white;
+}
+
+.taskScroll::-webkit-scrollbar{
   display: none;
 }
