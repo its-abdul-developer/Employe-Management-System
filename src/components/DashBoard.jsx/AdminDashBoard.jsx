@@ -5,7 +5,7 @@ import AllTask from "../others/AllTask";
 
 export const AdminDashBoard = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Header />
     <CreateTask />
     <AllTask />
