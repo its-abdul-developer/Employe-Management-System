@@ -11,7 +11,7 @@ const Header = ({ data }) => {
           Hello <br /> <span className="font-bold text-2xl">Abdul👋🏻</span>
         </h1>
       </div>
-      <button className="bg-red-500 px-3 py-1 rounded-xs">Log Out</button>
+      <button className="bg-red-500 px-3 py-0.5 rounded-xs">Log Out</button>
     </div>
   );
 };
