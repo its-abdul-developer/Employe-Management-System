@@ -1,4 +1,4 @@
-import React, { use, useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Login from "./components/Auth/Login";
 import EmployeesDashBoard from "./components/DashBoard.jsx/EmployeesDashBoard";
 import { AdminDashBoard } from "./components/DashBoard.jsx/AdminDashBoard";
@@ -6,16 +6,20 @@ import { getLocalStorage, setLocalStorage } from "./utils/LocalStorage";
 import { AuthContext } from "./context/AuthProvider";
 
 const App = () => {
-  // useEffect(() => {
-  //   setLocalStorage();
-  //   getLocalStorage();
-  // });
-
   const authData = useContext(AuthContext);
-  // console.log(authData.employees);
-
   const [user, setUser] = useState(null);
   const [loggedInUserData, setLoggedInUserData] = useState(null);
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    if (loggedInUser) {
+      const userData = JSON.parse(loggedInUser);
+      setUser(userData.role);
+      setLoggedInUserData(userData.data);
+    }
+  }, []);
+
+  // localStorage.clear();
 
   const handleLogin = (email, password) => {
     if (
@@ -23,10 +27,7 @@ const App = () => {
       authData.admin.find((a) => a.email == email && a.password == password)
     ) {
       setUser("admin");
-       localStorage.setItem(
-          "loggedInUser",
-          JSON.stringify({ role: "admin" }),
-        );
+      localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin" }));
       // console.log(user);
     } else if (authData) {
       const employee = authData.employees.find(
@@ -37,7 +38,7 @@ const App = () => {
         setLoggedInUserData(employee);
         localStorage.setItem(
           "loggedInUser",
-          JSON.stringify({ role: "employee" }),
+          JSON.stringify({ role: "employee", data: employee }),
         );
       }
       // console.log(user);
@@ -49,7 +50,11 @@ const App = () => {
   return (
     <>
       {!user ? <Login handleLogin={handleLogin} /> : ""}
-      {user == "admin" ? <AdminDashBoard /> : user == 'employee' ? <EmployeesDashBoard data={loggedInUserData} /> : null}
+      {user == "admin" ? (
+        <AdminDashBoard />
+      ) : user == "employee" ? (
+        <EmployeesDashBoard data={loggedInUserData} />
+      ) : null}
       {/* <EmployeesDashBoard /> */}
       {/* <AdminDashBoard /> */}
     </>

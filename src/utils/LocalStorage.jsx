@@ -1,210 +1,228 @@
+// localStorage.clear();
+
 const employees = [
   {
     id: 1,
+    firstname: "Ali",
     email: "employee1@company.com",
     password: "123",
+    taskCount: { active: 3, newTask: 2, completed: 1, failed: 0 },
     tasks: [
       {
         taskTitle: "Design Landing Page",
         taskDescription: "Create a responsive landing page UI",
         taskDate: "2026-02-01",
-        taskAssignTo: "Employee 1",
+        taskAssignTo: "Ali",
         taskCategory: "Design",
         active: true,
         newTask: true,
         completed: false,
-        failed: false,
+        failed: false
       },
       {
         taskTitle: "Fix Navbar Bug",
         taskDescription: "Resolve navbar alignment issue",
         taskDate: "2026-02-03",
-        taskAssignTo: "Employee 1",
+        taskAssignTo: "Ali",
         taskCategory: "Development",
         active: true,
         newTask: false,
         completed: false,
-        failed: false,
+        failed: false
       },
       {
         taskTitle: "Update Icons",
         taskDescription: "Replace old icons with SVG icons",
         taskDate: "2026-01-28",
-        taskAssignTo: "Employee 1",
+        taskAssignTo: "Ali",
         taskCategory: "UI",
         active: false,
         newTask: false,
         completed: true,
-        failed: false,
-      },
-    ],
+        failed: false
+      }
+    ]
   },
+
   {
     id: 2,
+    firstname: "Ahmed",
     email: "employee2@company.com",
     password: "123",
+    taskCount: { active: 1, newTask: 3, completed: 2, failed: 0 },
     tasks: [
       {
         taskTitle: "Create API Endpoints",
         taskDescription: "Develop REST APIs for tasks module",
         taskDate: "2026-02-02",
-        taskAssignTo: "Employee 2",
+        taskAssignTo: "Ahmed",
         taskCategory: "Backend",
         active: true,
         newTask: true,
         completed: false,
-        failed: false,
+        failed: false
       },
       {
         taskTitle: "Database Optimization",
         taskDescription: "Optimize employee table queries",
         taskDate: "2026-01-30",
-        taskAssignTo: "Employee 2",
+        taskAssignTo: "Ahmed",
         taskCategory: "Database",
         active: false,
         newTask: false,
         completed: true,
-        failed: false,
+        failed: false
       },
       {
         taskTitle: "JWT Auth Setup",
         taskDescription: "Implement JWT authentication",
         taskDate: "2026-02-04",
-        taskAssignTo: "Employee 2",
+        taskAssignTo: "Ahmed",
         taskCategory: "Security",
         active: true,
         newTask: false,
         completed: false,
-        failed: false,
-      },
-    ],
+        failed: false
+      }
+    ]
   },
+
   {
     id: 3,
+    firstname: "Usman",
     email: "employee3@company.com",
     password: "123",
+    taskCount: { active: 4, newTask: 1, completed: 0, failed: 1 },
     tasks: [
       {
         taskTitle: "Write Unit Tests",
         taskDescription: "Write tests for employee module",
         taskDate: "2026-02-01",
-        taskAssignTo: "Employee 3",
+        taskAssignTo: "Usman",
         taskCategory: "Testing",
         active: true,
         newTask: true,
         completed: false,
-        failed: false,
+        failed: false
       },
       {
         taskTitle: "Bug Fixing",
         taskDescription: "Fix reported frontend bugs",
         taskDate: "2026-01-29",
-        taskAssignTo: "Employee 3",
+        taskAssignTo: "Usman",
         taskCategory: "Development",
         active: false,
         newTask: false,
         completed: true,
-        failed: false,
+        failed: false
       },
       {
         taskTitle: "Deploy to Staging",
         taskDescription: "Deploy latest build to staging server",
         taskDate: "2026-02-05",
-        taskAssignTo: "Employee 3",
+        taskAssignTo: "Usman",
         taskCategory: "Deployment",
         active: true,
         newTask: false,
         completed: false,
-        failed: false,
-      },
-    ],
+        failed: false
+      }
+    ]
   },
+
   {
     id: 4,
+    firstname: "Bilal",
     email: "employee4@company.com",
     password: "123",
+    taskCount: { active: 2, newTask: 2, completed: 2, failed: 0 },
     tasks: [
       {
         taskTitle: "Create Wireframes",
         taskDescription: "Design wireframes for dashboard",
         taskDate: "2026-02-01",
-        taskAssignTo: "Employee 4",
+        taskAssignTo: "Bilal",
         taskCategory: "UX",
         active: true,
         newTask: true,
         completed: false,
-        failed: false,
+        failed: false
       },
       {
         taskTitle: "User Feedback Review",
         taskDescription: "Analyze user feedback reports",
         taskDate: "2026-01-27",
-        taskAssignTo: "Employee 4",
+        taskAssignTo: "Bilal",
         taskCategory: "Research",
         active: false,
         newTask: false,
         completed: true,
-        failed: false,
+        failed: false
       },
       {
         taskTitle: "Color Palette Update",
         taskDescription: "Update project color theme",
         taskDate: "2026-02-03",
-        taskAssignTo: "Employee 4",
+        taskAssignTo: "Bilal",
         taskCategory: "Design",
         active: true,
         newTask: false,
         completed: false,
-        failed: false,
-      },
-    ],
+        failed: false
+      }
+    ]
   },
+
   {
     id: 5,
+    firstname: "Hamza",
     email: "employee5@company.com",
     password: "123",
+    taskCount: { active: 0, newTask: 1, completed: 3, failed: 2 },
     tasks: [
       {
         taskTitle: "Prepare Documentation",
         taskDescription: "Write system documentation",
         taskDate: "2026-02-02",
-        taskAssignTo: "Employee 5",
+        taskAssignTo: "Hamza",
         taskCategory: "Documentation",
         active: true,
         newTask: true,
         completed: false,
-        failed: false,
+        failed: false
       },
       {
         taskTitle: "Client Meeting",
         taskDescription: "Attend client requirement meeting",
         taskDate: "2026-01-28",
-        taskAssignTo: "Employee 5",
+        taskAssignTo: "Hamza",
         taskCategory: "Meeting",
         active: false,
         newTask: false,
         completed: true,
-        failed: false,
+        failed: false
       },
       {
         taskTitle: "Report Submission",
         taskDescription: "Submit weekly progress report",
         taskDate: "2026-02-04",
-        taskAssignTo: "Employee 5",
+        taskAssignTo: "Hamza",
         taskCategory: "Reporting",
         active: false,
         newTask: false,
         completed: false,
-        failed: true,
-      },
-    ],
-  },
+        failed: true
+      }
+    ]
+  }
 ];
+
+export default employees;
 
 const admin = [
   {
     id: 1,
-    email: "admin@example.com",
+    email: "admin@me.com",
     password: "123",
   },
 ];
