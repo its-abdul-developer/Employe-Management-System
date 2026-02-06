@@ -28,7 +28,6 @@ const App = () => {
     ) {
       setUser("admin");
       localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin" }));
-      // console.log(user);
     } else if (authData) {
       const employee = authData.employees.find(
         (e) => e.email == email && e.password == password,
